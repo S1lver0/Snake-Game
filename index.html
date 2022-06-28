@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>SNAKE</title>
+    <title>SNAKE_GAME</title>
+    <link rel="icon" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a773a2dc-1abd-4c03-ac56-b9f8a4c1765b/df8580c-c6551c4e-9ebc-4b4c-91c5-ad377f2f2769.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E3NzNhMmRjLTFhYmQtNGMwMy1hYzU2LWI5ZjhhNGMxNzY1YlwvZGY4NTgwYy1jNjU1MWM0ZS05ZWJjLTRiNGMtOTFjNS1hZDM3N2YyZjI3NjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.clOhl9QI_WEXxOZwt5qMxN53KhJdTFXJqmAYOzX875U">
     <script src="lib/logi.js"></script>
+    <img id="source" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a773a2dc-1abd-4c03-ac56-b9f8a4c1765b/df8580t-5dcf1484-94e0-49d3-bd44-83e118767765.png/v1/fill/w_1280,h_1280,strp/pngwing_com__9__by_silver9523_df8580t-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2E3NzNhMmRjLTFhYmQtNGMwMy1hYzU2LWI5ZjhhNGMxNzY1YlwvZGY4NTgwdC01ZGNmMTQ4NC05NGUwLTQ5ZDMtYmQ0NC04M2UxMTg3Njc3NjUucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.MX0RHCEO7jXcMccCIvjb05Lo85_jPrUWcFHhpvirGcw"
+       width="0" height="0">
+       <img id="comida" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a773a2dc-1abd-4c03-ac56-b9f8a4c1765b/df85xq0-be352ba2-f44f-4c69-af21-98097181e74d.png/v1/fill/w_1280,h_1280,strp/pngwing_com__9___1__by_silver9523_df85xq0-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2E3NzNhMmRjLTFhYmQtNGMwMy1hYzU2LWI5ZjhhNGMxNzY1YlwvZGY4NXhxMC1iZTM1MmJhMi1mNDRmLTRjNjktYWYyMS05ODA5NzE4MWU3NGQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gFPkGBiJEOAfMakg-FAW_m6rx5a2RnK41JetqyTeIbk"
+       width="0" height="0">
+    <img id="cabeza" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a773a2dc-1abd-4c03-ac56-b9f8a4c1765b/df8580c-c6551c4e-9ebc-4b4c-91c5-ad377f2f2769.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E3NzNhMmRjLTFhYmQtNGMwMy1hYzU2LWI5ZjhhNGMxNzY1YlwvZGY4NTgwYy1jNjU1MWM0ZS05ZWJjLTRiNGMtOTFjNS1hZDM3N2YyZjI3NjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.clOhl9QI_WEXxOZwt5qMxN53KhJdTFXJqmAYOzX875U"
+    width="0" height="0">
+    <img id="perdio" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a773a2dc-1abd-4c03-ac56-b9f8a4c1765b/df85w5n-616a8c1d-07e6-4e70-bc6c-4318d2a793ec.png/v1/fill/w_1280,h_1431,strp/pngwing_com__13__by_silver9523_df85w5n-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQzMSIsInBhdGgiOiJcL2ZcL2E3NzNhMmRjLTFhYmQtNGMwMy1hYzU2LWI5ZjhhNGMxNzY1YlwvZGY4NXc1bi02MTZhOGMxZC0wN2U2LTRlNzAtYmM2Yy00MzE4ZDJhNzkzZWMucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.vrnKDIylBRx91vXPC2mAXt6ZlVkpmuqlqUAWmDUYg5k"
+    width="0" height="0">
 </head>
 <body style="background-image: url('https://images2.alphacoders.com/862/thumb-1920-862292.jpg') ;" >
     <div class="container text-center">
         <canvas id="snake" style="background-color:black" class="border" width="800" height="800"></canvas>
+        <br><br>
+        <button id="inicio" class="btn btn-secondary btn-lg" onclick="IniciarJuego()"> Iniciar juego</button>
     </div>
-    <button class="btn btn-primary" onclick="IniciarJuego()"> Iniciar juego</button>
 </body>
 </html>
